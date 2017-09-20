@@ -49,11 +49,13 @@ for i in range(3):
 display = Entry(root, font = ("Calibri", 13))
 display.grid(row = 1, columnspan = 4    , sticky = W+E)
 
+# loop the first 9 buttons(1-9)
 buttons = []
 for i in range(0, 10):
     button = Button(root, text = str(i), font=("Calibri", 12), command = lambda num=i : get_variables(num))
     buttons.append(button)
 
+# Operation Buttons
 cls = Button(root, text = "AC", command = clear_all, font=("Calibri", 12), foreground = "red")
 buttons.append(cls)
 zero = Button(root, text = "0", command = lambda : get_variables(0), font=("Calibri", 12))
@@ -69,6 +71,7 @@ buttons.append(multiply)
 divide = Button(root, text = "/", command = lambda :  get_operation("/"), font=("Calibri", 12))
 buttons.append(divide)
 
+#Plot the buttons
 buttons[1].grid(row=2, column=0)
 buttons[2].grid(row=2, column=1)
 buttons[3].grid(row=2, column=2)
